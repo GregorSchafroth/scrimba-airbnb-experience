@@ -3,19 +3,19 @@ import cardImage from '../images/katie-zaferes.png'
 import starImage from '../images/star.png'
 
 
-const Card = () => {
+const Card = (props) => {
   return (
-    <div className='card'>
-      <img className='card--image' src={cardImage} alt="person" />
-      <div className='card--stats'>
-        <img className='card--star' src={starImage} alt="star icon" />
-        <span>5.0</span>
-        <span className='gray'>(6) • </span>
-        <span className='gray'>USA</span>
-      </div> 
-      <p>Life lessons with Katie Zaferes</p>
-      <p><strong>From $136</strong> / person</p>
+    <div className="card">
+    <img src={`../../src/images/${props.img}`} className="card--image" />
+    <div className="card--stats">
+        <img src="../../src/images/star.png" className="card--star" />
+        <span>{props.rating}</span>
+        <span className="gray">({props.reviewCount}) • </span>
+        <span className="gray">{props.country}</span>
     </div>
+    <p>{props.title}</p>
+    <p><span className="bold">From ${props.price}</span> / person</p>
+</div>
   )
 }
 

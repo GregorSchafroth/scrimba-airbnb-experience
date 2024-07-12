@@ -1,26 +1,26 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Card from './components/Card'
+import data from './data'
 
-function App() {
+const cards = data.map(datum => (
+  <Card 
+    key={datum.id}
+    img={datum.coverImg}
+    rating={datum.stats.rating}
+    reviewCount={datum.stats.reviewCount}
+    country={datum.location}
+    title={datum.title}
+    price={datum.price}
+  />
+))
+
+export default function App() {
   return (
-  <div>
+  <div> 
     <Navbar />
     <Hero />
-    <Card
-     img="katie-zaferes.png"
-     rating="5.0"
-     reviewCount={6}
-     country="USA"
-     title="Life Lessons with Katie Zaferes"
-     price={136}
-    />
+    <div className='all--cards'>{cards}</div>
   </div>
   )
 }
-
-export default App

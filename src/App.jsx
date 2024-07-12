@@ -9,9 +9,10 @@ const cards = data.map(datum => (
     img={datum.coverImg}
     rating={datum.stats.rating}
     reviewCount={datum.stats.reviewCount}
-    country={datum.location}
+    location={datum.location}
     title={datum.title}
     price={datum.price}
+    openSpots={datum.openSpots}
   />
 ))
 

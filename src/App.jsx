@@ -6,7 +6,7 @@ import data from './data'
 const cards = data.map(datum => (
   <Card 
     key={datum.id}
-    datum={datum}
+    {...datum}
   />
 ))
 
